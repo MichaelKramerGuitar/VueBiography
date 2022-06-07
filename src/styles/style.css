@@ -1,0 +1,322 @@
+/*
+Links from facilitator Josh Hanson:
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout
+https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/
+https://www.w3schools.com/css/css_rwd_intro.asp
+ */
+/*
+ media queries adapted from:
+https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries
+ */
+
+@media screen and (max-width: 640px){
+
+    /*
+    make tables smaller on phones, mobile first
+     */
+    table {
+        font-size: .5em;
+    }
+    /* hide images for screen space */
+    img, figure, aside {
+        display: none;
+    }
+    article {
+        margin: 1em;
+    }
+
+}
+
+@media screen and (min-width: 640px) {
+    /* bigger than iphones, tablet/smaller monitor range */
+    table {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    article {
+        padding: 10em;
+        display: inline-block;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        flex: 1;
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+    /* larger tablets, monitor range */
+
+    /* enlarge font for a bigger screen, more padding */
+    article, .introduction, .speech {
+        font-size: 1.2em;
+        padding: 2em;
+    }
+}
+
+@media print {
+
+    header, footer, img, video, aside, section, figure, form, svg {
+        display: none;
+    }
+    article {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        color: black;
+    }
+}
+
+
+/* BEM Block, element, modifier philosophy */
+
+body {
+    font-family: system-ui, sans-serif;
+    margin: 1em;
+
+}
+
+/* Nav source modified from: https://codepen.io/maheshambure21/pen/QwXaRw */
+.nav {
+    text-align: center;
+    font-family: system-ui, sans-serif;
+    width: 80%;
+    margin: 0 auto;
+    background: #fff;
+    padding: 1em;
+}
+
+.nav .router-link:hover{
+    transform: scale(1.05);
+}
+
+.nav router-link {
+    list-style: none;
+    text-align: center;
+    display: inline-block;
+    display: block;
+    padding: .25em;
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 600; /* semi-bold */
+    font-size: small;
+    text-transform: uppercase;
+    margin: 0 10px;
+}
+
+
+/*.nav ul li a {*/
+/*    display: block;*/
+/*    padding: .25em;*/
+/*    text-decoration: none;*/
+/*    color: #aaa;*/
+/*    font-weight: 600; !* semi-bold *!*/
+/*    font-size: small;*/
+/*    text-transform: uppercase;*/
+/*    margin: 0 10px;*/
+/*}*/
+
+.nav router-link,
+.nav router-link:after,
+.nav router-link:before {
+    transition: all .5s;
+}
+.nav ul li a:hover {
+    color: #555;
+}
+
+
+.nav router-link {
+    position: relative;
+}
+
+.nav router-link:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+}
+.nav router-link:hover:after {
+    width: 100%;
+}
+/* end nav source */
+
+h1, h2 {
+    text-align: left;
+    margin-left: 2em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+/* intro article section with video index.html */
+.introduction {
+    margin-inline-end: auto;
+    /*background-image: linear-gradient(rgb(220,231,243), rgb(73,133,194));*/
+    background-image: linear-gradient(rgb(73,133,194), rgb(220,231,243));
+    color: white;
+}
+
+/* intro video index.html */
+video, img {
+    display: block;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/* hover over video it gets bigger and shadow - https://css-tricks.com/3d-text-tower/ */
+video:hover, img:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform:    scale(1.05);
+    -ms-transform:     scale(1.05);
+    -o-transform:      scale(1.05);
+    transform:         scale(1.01);
+    text-shadow: 3px 3px 0 #333;
+    transition-duration: .5s;
+}
+
+/* article on index.html */
+.story {
+
+    color: white;
+    margin-inline: auto;
+    /*border: 2px solid rgb(73,133,194);*/
+    padding: 2vw;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+article:hover,
+.story:hover,
+h1:hover,
+h2:hover,
+p:hover,
+tr:hover,
+li:hover,
+iframe:hover,
+form:hover {
+    -webkit-transform: scale(1.01);
+    -moz-transform:    scale(1.01);
+    -ms-transform:     scale(1.01);
+    -o-transform:      scale(1.01);
+    transform:         scale(1.01);
+    transition-duration: .5s;
+    text-shadow: 2px 2px 4px lightgrey;
+    transition-duration: .5s;
+    /*font-family: 'Raleway SemiBold', 'Roboto', sans-serif;*/
+}
+
+h1:hover, h2:hover, .rotation:hover {
+    color: #9d3b2c;
+}
+
+/* table on index.html */
+.takeaways {
+
+    color: #ffffff;
+    background-color: #3b3a30;
+    padding-bottom: 1.5em;
+}
+
+footer {
+    background-color: #eaece5;
+    text-align: center;
+    padding-top: .5em;
+}
+
+article, article ul {
+    display: block;
+    margin: auto;
+    padding: 2em;
+}
+
+article {
+    margin: 2em;
+}
+
+/* table style heavily inspired by:
+https://codeshack.io/html-styling-tables-example/ */
+table {
+    border-collapse: collapse;
+    font-family: 'Fredericka the Great', cursive;
+    margin-inline: auto;
+}
+
+caption {
+    text-align: left;
+    margin-left: 2em;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-top: .5em;
+    margin-bottom: 1em;
+}
+
+table td {
+    padding: .5em;
+}
+
+table thead td {
+    background-color: #54585d;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+    border: 1px solid #54585d;
+}
+table tbody td {
+    color: #636363;
+    border: 1px solid #dddfe1;
+}
+table tbody tr {
+    background-color: #f9fafb;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+textarea, input {
+    margin: auto;
+    color: #aaa;
+}
+
+form {
+    padding: 2em;
+}
+
+/*
+attention grabbing rotation inspired by
+https://www.w3schools.com/cssref/tryit.asp?filename=trycss_anim_transform
+
+define an animation
+ */
+@keyframes rotate-object {
+    100% {transform: rotate(360deg);}
+}
+
+.rotation {
+    animation: rotate-object 3s; /* use self-defined animation */
+}
+
+/* hide figure captions but keep html them in for image source links */
+figcaption {
+    display: none;
+}
+
+aside {
+    padding: 3em;
+}
+
+
+
+
