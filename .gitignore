@@ -21,3 +21,6 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Private Project Requirements from Boston University
+metcs601_TermProject.docx
