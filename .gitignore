@@ -24,3 +24,5 @@ pnpm-debug.log*
 
 # Private Project Requirements from Boston University
 metcs601_TermProject.docx
+# Local Netlify folder
+.netlify
