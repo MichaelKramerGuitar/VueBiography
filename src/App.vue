@@ -3,9 +3,11 @@
     <ul>
       <li><a><router-link class="router-link" :to="{name: 'home'}" active-link="active">Home</router-link></a></li>
       <li><a><router-link class="router-link" :to="{name: 'army'}" active-link="active">Army</router-link></a></li>
+      <li><a><router-link class="router-link" :to="{name: 'freelance'}" active-link="active">Freelance</router-link></a></li>
+      <li><a><router-link class="router-link" :to="{name: 'foundational-melodies'}" active-link="active">Foundational Melodies</router-link></a></li>
+      <li><a><router-link class="router-link" :to="{name: 'public-speaking'}" active-link="active">Public Speaking</router-link></a></li>
       <li><a><router-link class="router-link" :to="{name: 'blog'}" active-link="active">Blog</router-link></a></li>
-      <li><a><router-link class="router-link" to="/about" active-link="active">About</router-link></a></li>
-      <li><a><router-link class="router-link" to="/user/" active-link="active">User Page</router-link></a></li>
+
     </ul>
   </nav>
   <router-view/>

@@ -1,10 +1,12 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "@/views/HomePage.vue";
-import About from "@/views/AboutPage.vue";
 import User from "@/views/UserPage.vue";
 import NotFound from "@/views/NotFound";
 import ArmyPage from "@/views/ArmyPage";
 import BlogPage from "@/views/BlogPage";
+import FreelancePage from "@/views/FreelancePage";
+import FoundationalMelodies from "@/views/FoundationalMelodies";
+import PublicSpeaking from "@/views/PublicSpeaking";
 
 
 // https://www.vuemastery.com/blog/vue-router-a-tutorial-for-vue-3/
@@ -21,14 +23,24 @@ const routes = [
         component: ArmyPage
     },
     {
+        path: "/freelance",
+        name: "freelance",
+        component: FreelancePage
+    },
+    {
+        path: "/foundational-melodies",
+        name: "foundational-melodies",
+        component: FoundationalMelodies
+    },
+    {
+        path: "/public-speaking",
+        name: "public-speaking",
+        component: PublicSpeaking
+    },
+    {
         path: "/blog",
         name: "blog",
         component: BlogPage
-    },
-    {
-        path: "/about",
-        name: "About",
-        component: About,
     },
     {
         path: "/user/:name",  // <-- notice the colon
