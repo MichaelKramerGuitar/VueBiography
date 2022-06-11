@@ -7,6 +7,7 @@
       <li><a><router-link class="router-link" :to="{name: 'foundational-melodies'}" active-link="active">Foundational Melodies</router-link></a></li>
       <li><a><router-link class="router-link" :to="{name: 'public-speaking'}" active-link="active">Public Speaking</router-link></a></li>
       <li><a><router-link class="router-link" :to="{name: 'blog'}" active-link="active">Blog</router-link></a></li>
+      <li><a><router-link class="router-link" :to="{name: 'notation'}" active-link="active">Notation</router-link></a></li>
 
     </ul>
   </nav>

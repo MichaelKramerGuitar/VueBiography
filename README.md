@@ -23,3 +23,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Netlify Git Lfs setup for reference
+[Netlify Docs](https://docs.netlify.com/large-media/setup/)

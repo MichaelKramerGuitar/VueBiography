@@ -7,6 +7,7 @@ import BlogPage from "@/views/BlogPage";
 import FreelancePage from "@/views/FreelancePage";
 import FoundationalMelodies from "@/views/FoundationalMelodies";
 import PublicSpeaking from "@/views/PublicSpeaking";
+import NotationPage from "@/views/NotationPage";
 
 
 // https://www.vuemastery.com/blog/vue-router-a-tutorial-for-vue-3/
@@ -41,6 +42,11 @@ const routes = [
         path: "/blog",
         name: "blog",
         component: BlogPage
+    },
+    {
+        path: "/notation",
+        name: "notation",
+        component: NotationPage
     },
     {
         path: "/user/:name",  // <-- notice the colon

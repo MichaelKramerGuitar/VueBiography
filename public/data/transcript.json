@@ -1,0 +1,58 @@
+{
+  "courses": [
+    {
+      "courseNumber": "CS 300",
+      "courseTitle": "Intro to Computer Science",
+      "termCompleted": "Spring 1, 2021",
+      "mainTakeaway": "Importance of Discrete Math"
+    },
+    {
+      "courseNumber": "CS 521",
+      "courseTitle": "Python Techniques",
+      "termCompleted": "Spring 2, 2021",
+      "mainTakeaway": "How Python is structured"
+    },
+    {
+      "courseNumber": "CS 682",
+      "courseTitle": "Systems Design and Analysis",
+      "termCompleted": "Summer 1, 2021",
+      "mainTakeaway": "UML designs before code to start"
+    },
+    {
+      "courseNumber": "CS 677",
+      "courseTitle": "Data Science with Python",
+      "termCompleted": "Summer 2, 2021 1",
+      "mainTakeaway": "Classifiers efficacy is tied into nature of data"
+    },
+    {
+      "courseNumber": "CS 664",
+      "courseTitle": "Intro to AI",
+      "termCompleted": "Fall 1, 2021",
+      "mainTakeaway": "Intelligence and learning vary according to the learner"
+    },
+    {
+      "courseNumber": "CS 526",
+      "courseTitle": "Data Structures and Algorithms",
+      "termCompleted": "Fall 2, 2021",
+      "mainTakeaway": "The most fundamentally important course of the program"
+    },
+    {
+      "courseNumber": "CS 622",
+      "courseTitle": "Advanced Programming Techniques",
+      "termCompleted": "Spring 1, 2022",
+      "mainTakeaway": "Threading and callbacks"
+    },
+    {
+      "courseNumber": "CS 665",
+      "courseTitle": "Software Design and Patterns",
+      "termCompleted": "Spring 2, 2022",
+      "mainTakeaway": "Understanding software design goals to justify design choices"
+    },
+    {
+      "courseNumber": "CS 601",
+      "courseTitle": "Web Application Development",
+      "termCompleted": "Summer 1, 2022",
+      "mainTakeaway": "Asynchronous JavaScript"
+    }
+  ]
+}

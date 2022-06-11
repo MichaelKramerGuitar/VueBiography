@@ -31,7 +31,7 @@
           &quot;pandemic hiatus&quot; as it gradually becomes more safe to gather again.</p>
         <p>Michael is additionally the co-leader of the <a href="https://kwbigband.com/" target="_blank"><i>KW Big Band</i></a>
           alongside pianist and composer <a href="https://timothywhalen.com/home" target="_blank">Tim Whalen</a>.</p>
-        <aside>Check out Tim's <a href="https://timothywhalen.com/acetone-sessions" target="_blank">Acetone Sessions</a>
+        <aside>Check out Tim's <a href="https://timothywhalen.com/acetone-sessions" target="_blank">Acetone Sessions </a>
           <b><i><a href="https://youtu.be/yJ4OTPtsjes" target="_blank">interview with Michael</a></i></b>
           for more information about Michael's musical upbringing, the recording of the second
           <i><abbr title="Superstring and the Cosmic Vibrations">Superstring</abbr></i> record and

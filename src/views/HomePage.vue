@@ -42,61 +42,13 @@
         <th>Main Takeaway</th>
       </tr>
       </thead>
-      <tbody>
-      <tr>
-        <td>CS 300</td>
-        <td>Intro to Computer Science</td>
-        <td>Spring 1, 2021</td>
-        <td>Importance of Discrete Math</td>
-      </tr>
-      <tr>
-        <td>CS 521</td>
-        <td>Python Techniques</td>
-        <td>Spring 2, 2021</td>
-        <td>How Python is structured</td>
-      </tr>
-      <tr>
-        <td>CS 682</td>
-        <td>Systems Design and Analysis</td>
-        <td>Summer 1, 2021</td>
-        <td>UML designs before code to start</td>
-      </tr>
-      <tr>
-        <td>CS 677</td>
-        <td>Data Science with Python</td>
-        <td>Summer 2, 2021</td>
-        <td>Classifiers efficacy is tied into nature of data</td>
-      </tr>
-      <tr>
-        <td>CS 664</td>
-        <td>Intro to AI</td>
-        <td>Fall 1, 2021</td>
-        <td>Intelligence and learning vary according to the learner</td>
-      </tr>
-      <tr>
-        <td>CS 526</td>
-        <td>Data Structures and Algorithms</td>
-        <td>Fall 2, 2021</td>
-        <td>The most fundamentally important course of the program</td>
-      </tr>
-      <tr>
-        <td>CS 622</td>
-        <td>Advanced Programming Techniques</td>
-        <td>Spring 1, 2022</td>
-        <td>Threading and callbacks</td>
-      </tr>
-      <tr>
-        <td>CS 665</td>
-        <td>Software Design and Patterns</td>
-        <td>Spring 2, 2022</td>
-        <td>Understanding software design goals to justify design choices</td>
-      </tr>
-      <tr>
-        <td>CS 601</td>
-        <td>Web Application Development</td>
-        <td>Summer 1, 2022</td>
-        <td>In progress!</td>
-      </tr>
+      <tbody v-for="course in transcript" v-bind:key="course">
+        <tr>
+          <td>{{course.courseNumber}}</td>
+          <td>{{course.courseTitle}}</td>
+          <td>{{course.termCompleted}}</td>
+          <td>{{course.mainTakeaway}}</td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -113,10 +65,37 @@
 
 <script>
 export default {
-  name: "HomePage"
+  name: "HomePage",
+  data() {
+    return{
+      transcript: [],
+          error : ""
+    }
+  },
+  //https://stackoverflow.com/questions/45813347/difference-between-the-created-and-mounted-events-in-vue-js
+  created() {
+    let url = "./data/transcript.json"
+    fetch(url, {
+      mode: "no-cors",
+      method: "GET",
+      headers: {
+        'Access-Control-Allow-Origin': 'https://kramer-bu-vue-json.netlify.app/',
+        'Access-Control-Allow-Methods': 'GET',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+      }
+    })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data.courses)
+          this.transcript = data.courses;
+        })
+        .catch(err => {
+          this.error = err
+        });
+  }
 }
 </script>
 
 <style scoped>
-/*@import "../styles/style.css";*/
+@import "../styles/style.css";
 </style>
