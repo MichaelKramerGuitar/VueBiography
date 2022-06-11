@@ -52,6 +52,7 @@
       </tbody>
     </table>
   </div>
+  <div v-if="error"><p>{{error}}</p></div>
   <!-- visual divider -->
   <svg viewBox="0 0 1 .01" xmlns="http://www.w3.org/2000/svg">
     <rect width="1" height=".01">
@@ -74,7 +75,7 @@ export default {
   },
   //https://stackoverflow.com/questions/45813347/difference-between-the-created-and-mounted-events-in-vue-js
   created() {
-    let url = "./data/transcript.json"
+    let url = "./data/transcript.json";
     fetch(url, {
       mode: "no-cors",
       method: "GET",

@@ -151,79 +151,17 @@
           <th>Year</th>
         </tr>
         </thead>
-        <tbody>
-        <tr>
-          <td><a href="https://youtu.be/HOoZ6zo8HAQ" target="_blank">Moose the Mooche</a></td>
-          <td><cite> Charlie Parker</cite></td>
-          <td>Charlie Parker's Savoy and Dial Sessions</td>
-          <td><cite>Dial Records</cite></td>
-          <td>1946</td>
-        </tr>
-        <tr>
-          <td><a href="https://youtu.be/fHNK3XcUSTo" target="_blank">Cheryl</a></td>
-          <td><cite> Charlie Parker</cite></td>
-          <td>Charlie Parker's Savoy and Dial Sessions</td>
-          <td><cite>Dial Records/Savoy Records</cite></td>
-          <td>1945</td>
-        </tr>
-        <tr>
-          <td><a href="https://youtu.be/iDrH5urtCbQo" target="_blank">Freedom Jazz Dance</a></td>
-          <td><cite> Eddie Harris</cite></td>
-          <td>The In Sound</td>
-          <td><cite>Atlantic Records</cite></td>
-          <td>1965</td>
-        </tr>
-        <tr>
-          <td><a href="https://youtu.be/ZtMzg71VtMk" target="_blank">Cryin' Blues</a></td>
-          <td><cite> Eddie Harris</cite></td>
-          <td>The In Sound</td>
-          <td><cite>Atlantic Records</cite></td>
-          <td>1965</td>
-        </tr>
-        <tr>
-          <td><a href="https://youtu.be/QaS7OoiGqSo?t=2172" target="_blank">Turns</a></td>
-          <td><cite> Kurt Rosenwinkel</cite></td>
-          <td>Our Secret World (with OJM)</td>
-          <td><cite>Wommusic</cite></td>
-          <td>2010</td>
-        </tr>
-        <tr>
-          <td><a href="https://youtu.be/q2QwRV9aq8s?t=138" target="_blank">Anthropology</a></td>
-          <td><cite> Charlie Parker</cite></td>
-          <td>Charlie Parker's Savoy and Dial Sessions</td>
-          <td><cite>Savoy</cite></td>
-          <td>1945</td>
-        </tr>
-        <tr>
-          <td><a href="https://youtu.be/02apSoxB7B4" target="_blank">Donna Lee</a></td>
-          <td><cite> Charlie Parker</cite></td>
-          <td>Charlie Parker's Savoy and Dial Sessions</td>
-          <td><cite>Savoy</cite></td>
-          <td>1947</td>
-        </tr>
-        <tr>
-          <td><a href="https://youtu.be/jp0orpZccVQ" target="_blank">Celia</a></td>
-          <td><cite> Bud Powell</cite></td>
-          <td>Celia/All God's Chillun Got Rhythm</td>
-          <td><cite>Mercury</cite></td>
-          <td>1950</td>
-        </tr>
-        <tr>
-          <td><a href="https://youtu.be/z1aOt3U-cKk" target="_blank">Wail</a></td>
-          <td><cite> Bud Powell</cite></td>
-          <td>The Amazing Bud Powell, Col. 1</td>
-          <td><cite>Blue Note</cite></td>
-          <td>1952</td>
-        </tr>
-        <tr>
-          <td><a href="https://youtu.be/HJTT95Fx41g" target="_blank">Dixie's Dilemma</a></td>
-          <td><cite> Warne Marsh</cite></td>
-          <td>Intuition (Lenny Tristano and Warne Marsh)</td>
-          <td><cite>Capitol Records</cite></td>
-          <td>1956</td>
-        </tr>
+        <tbody v-for="song in melodies" v-bind:key="song">
+            <tr>
+              <td><a :href="song.url" target="_blank">{{ song.title }}</a></td>
+              <td><cite> {{ song.composer }}</cite></td>
+              <td>{{ song.album }}</td>
+              <td><cite>{{ song.label }}</cite></td>
+              <td>{{ song.year }}</td>
+            </tr>
         </tbody>
       </table>
+      <div v-if="error"><p>{{error}}</p></div>
     </article>
 
   </main>
@@ -240,7 +178,33 @@
 
 <script>
 export default {
-  name: "FoundationalMelodies"
+  name: "FoundationalMelodies",
+  data() {
+    return {
+      melodies: [],
+      error: ""
+    }
+  },
+  created() {
+    let url = "./data/foundationalMelodies.json";
+    fetch(url, {
+      mode: "no-cors",
+      method: "GET",
+      headers: {
+        'Access-Control-Allow-Origin': 'https://kramer-bu-vue-json.netlify.app/',
+        'Access-Control-Allow-Methods': 'GET',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+      }
+    })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data.melodies)
+          this.melodies = data.melodies;
+        })
+        .catch(err => {
+          this.error = err
+        });
+  }
 }
 </script>
 
