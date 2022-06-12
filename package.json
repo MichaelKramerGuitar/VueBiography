@@ -7,8 +7,16 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
   "dependencies": {
+    "adaptr-music-player": "^0.3.8",
+    "axios": "^0.27.2",
     "core-js": "^3.8.3",
+    "dotenv": "^16.0.1",
     "netlify-cli": "^10.4.0",
     "vexflow": "^4.0.3",
     "vue": "^3.2.13",
@@ -20,6 +28,7 @@
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "dotenv-webpack": "^7.1.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3"
   },

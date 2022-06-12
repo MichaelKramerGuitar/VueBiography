@@ -24,5 +24,10 @@ pnpm-debug.log*
 
 # Private Project Requirements from Boston University
 metcs601_TermProject.docx
+Final Demo Check List.docx
 # Local Netlify folder
 .netlify
+
+# PRIVATE KEYS
+.env
+src/keys.prod.js
