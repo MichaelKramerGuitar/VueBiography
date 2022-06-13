@@ -6,12 +6,11 @@
     </rect>
   </svg>
   <section class="introduction">
-    <video src="../assets/videos/intro.mp4"
-           poster="../assets/images/michael1.png"
-           preload controls loop
-           id="intro-vid">
-      <p>My time at BU</p>
-    </video>
+    <figure>
+      <h3 class="caption">{{ caption }}</h3>
+      <img class="intro-slideshow" style="height: 20rem; width: 20rem" alt="slideshow" @mouseover="changeImage" :src="current">
+
+    </figure>
     <article class="story">
 
       <h2>Michael's Story</h2>
@@ -65,16 +64,58 @@
 </template>
 
 <script>
+
+import michael1 from "../assets/images/michael1.png";
+import michaelArmy from "../assets/images/michael-army.jpg";
+import michael2 from "../assets/images/michael2.png";
+import diz from "../assets/images/dizzy.jpg";
+import michaelSpeech from "../assets/images/michael-speech.jpg";
+import logo from "../assets/images/superstringlogo.png";
+
 export default {
   name: "HomePage",
   data() {
-    return{
+    return {
+      current: null, // pointer to current image
+      first: michael1,
+      second: michaelArmy,
+      third: michael2,
+      fourth: diz,
+      fifth: michaelSpeech,
+      sixth: logo,
+      caption: "",
       transcript: [],
           error : ""
     }
   },
+  methods: {
+    changeImage() {
+      if(this.current === this.first) {
+        this.current = this.second;
+        this.caption = "see Army, hover again for next"
+      } else if (this.current === this.second) {
+        this.current = this.third;
+        this.caption = "see Freelance, hover again for next"
+      } else if (this.current === this.third) {
+        this.current = this.fourth;
+        this.caption = "see Foundational Melodies, hover again for next"
+      } else if (this.current === this.fourth){
+        this.current = this.fifth;
+        this.caption = "see Public Speaking, hover again for next"
+      } else if (this.current === this.fifth){
+        this.current = this.sixth;
+        this.caption = "see Blog, hover again for next"
+      } else { // // this.current === this.sixth
+        this.current = this.first;
+        this.caption = "hover for a preview of the site pages"
+      }
+    }
+  },
   //https://stackoverflow.com/questions/45813347/difference-between-the-created-and-mounted-events-in-vue-js
   created() {
+    this.current = this.first; // initialize image
+    this.caption = "hover for a preview of the site pages"
+    // handle populating table data
     let url = "./data/transcript.json";
     fetch(url, {
       mode: "no-cors",

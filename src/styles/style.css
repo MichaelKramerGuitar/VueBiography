@@ -305,6 +305,15 @@ aside {
     padding: 3em;
 }
 
+.intro-slideshow {
+    height: 20rem;
+    width: 20rem;
+    object-fit: scale-down;
+}
+
+.caption {
+    text-align: center;
+}
 
 
 
