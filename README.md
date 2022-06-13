@@ -20,7 +20,7 @@
 * AJAX fetch requests included
 * CSS responsive design included
 * Dom Manipulation with Vue included 
-* ES6 syntax (let and const) included
+* ES6 syntax (let and const and promises) included
 
 ## Project setup
 ```
