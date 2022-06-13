@@ -1,15 +1,10 @@
 <template>
-  <!-- visual divider -->
-  <svg viewBox="0 0 1 .01" xmlns="http://www.w3.org/2000/svg">
-    <rect width="1" height=".01">
-      <animate attributeName="rx" values="0;1;0" dur="10s" repeatCount="indefinite" />
-    </rect>
-  </svg>
   <div>
     <figure>
-      <img src="../assets/images/michael-speech.jpg"
-           style="height: 35%; width: 35%"
-           alt="Michael speaking at Washington Waldorf School Gala, 2022 at Wolf Trap">
+      <img style="height: 35%; width: 35%"
+           alt="Michael speaking at Washington Waldorf School Gala, 2022 at Wolf Trap"
+           @mouseover="changeImage" :src="current">
+      <h5 class="caption">{{caption}}</h5>
       <figcaption><b>Michael speaking at <abbr title="Washington Waldorf School">WWS</abbr>
         Gala, 2022 at Wolf Trap</b></figcaption>
     </figure>
@@ -230,15 +225,6 @@
         </li>
       </ul>
     </article>
-    <div>
-      <figure>
-        <img src="../assets/images/pie-face1.jpg"
-             style="height: 35%; width: 35%"
-             alt="Michael smears High School Teacher with dessert, 2022 at Wolf Trap">
-        <figcaption><b>Michael smears high school civics teacher with dessert for a bid putting total funds raised over
-          $100K towards financial aid.</b></figcaption>
-      </figure>
-    </div>
   </main>
   <!-- visual divider -->
   <svg viewBox="0 0 1 .01" xmlns="http://www.w3.org/2000/svg">
@@ -252,8 +238,40 @@
 </template>
 
 <script>
+
+import michaelSpeech from "../assets/images/michael-speech.jpg";
+import pieFace1 from "../assets/images/pie-face1.jpg";
+import pieFace2 from "../assets/images/pie-face2.jpg";
+
 export default {
-  name: "PublicSpeaking"
+  name: "PublicSpeaking",
+
+  data() {
+    return {
+      current: null, // pointer to current image
+      first: michaelSpeech,
+      second: pieFace1,
+      third: pieFace2,
+      caption: ""
+    }
+  },
+  methods: {
+    changeImage() {
+      if(this.current === this.first) {
+        this.current = this.second;
+        this.caption = "Michael smears dessert in civics teachers face for bid placing total raised over 100K"
+      } else if (this.current === this.second) {
+        this.current = this.third;
+      } else { // // this.current === this.third
+        this.current = this.first;
+        this.caption = "Michael delivering speech"
+      }
+    }
+  },
+  created() {
+    this.current = this.first;
+    this.caption = "Michael delivering speech"
+  }
 }
 </script>
 

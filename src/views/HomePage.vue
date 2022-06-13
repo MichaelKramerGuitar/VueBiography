@@ -1,10 +1,4 @@
 <template>
-  <!-- visual divider -->
-  <svg viewBox="0 0 1 .01" xmlns="http://www.w3.org/2000/svg">
-    <rect width="1" height=".01">
-      <animate attributeName="rx" values="0;1;0" dur="10s" repeatCount="indefinite" />
-    </rect>
-  </svg>
   <section class="introduction">
     <figure>
       <h3 class="caption">{{ caption }}</h3>
@@ -92,19 +86,19 @@ export default {
     changeImage() {
       if(this.current === this.first) {
         this.current = this.second;
-        this.caption = "see Army, hover again for next"
+        this.caption = "see Army tab, hover again for next"
       } else if (this.current === this.second) {
         this.current = this.third;
-        this.caption = "see Freelance, hover again for next"
+        this.caption = "see Freelance tab, hover again for next"
       } else if (this.current === this.third) {
         this.current = this.fourth;
-        this.caption = "see Foundational Melodies, hover again for next"
+        this.caption = "see Foundational Melodies tab, hover again for next"
       } else if (this.current === this.fourth){
         this.current = this.fifth;
-        this.caption = "see Public Speaking, hover again for next"
+        this.caption = "see Public Speaking tab, hover again for next"
       } else if (this.current === this.fifth){
         this.current = this.sixth;
-        this.caption = "see Blog, hover again for next"
+        this.caption = "see Blog tab, hover again for next"
       } else { // // this.current === this.sixth
         this.current = this.first;
         this.caption = "hover for a preview of the site pages"

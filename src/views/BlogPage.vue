@@ -15,7 +15,10 @@
 
   <h1>Michael's weekly blog</h1>
   <article>
-    <h2 class="rotation">5/16/2022 - Jazz is not America's Classical Music</h2>
+    <h2 class="rotation"
+        @mouseenter="hover = true"
+        @mouseleave="hover = false"
+        :class="{highlight: hover}">5/16/2022 - Jazz is not America's Classical Music</h2>
     <p>
       I had a “connect the dots” moment worth sharing.
     </p>
@@ -43,7 +46,10 @@
       I’ve often felt the implication of the term &quot;Classical&quot; Music was something else by those who use the term,
       especially regarding Jazz as &quot;American Classical Music&quot;.
     </p>
-    <p class="rotation"><em>Framed in this way, my understanding of Jazz doesn’t fall entirely into the Classical Logic, binary logic
+    <p class="rotation"
+       @mouseenter="hover = true"
+       @mouseleave="hover = false"
+       :class="{highlight: hover}"><em>Framed in this way, my understanding of Jazz doesn’t fall entirely into the Classical Logic, binary logic
       model.</em></p>
     <p>Even compositionally, there’s obviously a range of techniques within the great composers of jazz, but
       that range is often drawing from a combination of impressionist ideas, in tandem with
@@ -74,7 +80,12 @@
 
 <script>
 export default {
-  name: "BlogPage"
+  name: "BlogPage",
+  data() {
+    return {
+      hover: false
+    }
+  }
 }
 </script>
 
