@@ -1,10 +1,4 @@
 <template>
-  <!-- visual divider -->
-  <svg viewBox="0 0 1 .01" xmlns="http://www.w3.org/2000/svg">
-    <rect width="1" height=".01">
-      <animate attributeName="rx" values="0;1;0" dur="10s" repeatCount="indefinite" />
-    </rect>
-  </svg>
   <div>
     <figure>
       <img src="../assets/images/superstringlogo.png"
