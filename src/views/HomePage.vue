@@ -122,7 +122,6 @@ export default {
     })
         .then(response => response.json())
         .then(data => {
-          console.log(data.courses)
           this.transcript = data.courses;
         })
         .catch(err => {

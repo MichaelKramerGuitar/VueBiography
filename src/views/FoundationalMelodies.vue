@@ -192,7 +192,6 @@ export default {
     })
         .then(response => response.json())
         .then(data => {
-          console.log(data.melodies)
           this.melodies = data.melodies;
         })
         .catch(err => {
