@@ -24,7 +24,6 @@ https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries
     article {
         margin: 1em;
     }
-
 }
 
 @media screen and (min-width: 640px) {
@@ -38,12 +37,9 @@ https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries
         display: inline-block;
     }
 
-    nav ul {
-        display: flex;
-    }
-
-    nav li {
-        flex: 1;
+    nav {
+        display: grid;
+        grid-template-rows: 2rem 2rem 2rem;
     }
 }
 
@@ -60,7 +56,7 @@ https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries
 
 @media print {
 
-    header, footer, img, video, aside, section, figure, form, svg {
+    header, footer, img, aside, section, figure, form, svg {
         display: none;
     }
     article {
@@ -157,8 +153,8 @@ video, img {
 }
 
 
-/* hover over video it gets bigger and shadow - https://css-tricks.com/3d-text-tower/ */
-video:hover, img:hover {
+/* hover over img it gets bigger and shadow - https://css-tricks.com/3d-text-tower/ */
+img:hover {
     -webkit-transform: scale(1.05);
     -moz-transform:    scale(1.05);
     -ms-transform:     scale(1.05);
@@ -171,11 +167,9 @@ video:hover, img:hover {
 /* article on index.html */
 .story {
 
-    color: white;
+    color: dimgrey;
     margin-inline: auto;
-    /*border: 2px solid rgb(73,133,194);*/
     padding: 2vw;
-    background-color: rgba(255, 255, 255, 0.15);
 }
 
 article:hover,
@@ -305,6 +299,7 @@ aside {
 }
 
 .caption {
+    color: #54585d;
     text-align: center;
 }
 
