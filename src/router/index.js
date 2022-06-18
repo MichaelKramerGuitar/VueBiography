@@ -1,13 +1,17 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "@/views/HomePage.vue";
 import NotFound from "@/views/NotFound";
-import ArmyPage from "@/views/ArmyPage";
-import BlogPage from "@/views/BlogPage";
-import FreelancePage from "@/views/FreelancePage";
-import FoundationalMelodies from "@/views/FoundationalMelodies";
-import PublicSpeaking from "@/views/PublicSpeaking";
+//import ArmyPage from "@/views/ArmyPage";
+//import BlogPage from "@/views/BlogPage";
+//import FreelancePage from "@/views/FreelancePage";
+//import FoundationalMelodies from "@/views/FoundationalMelodies";
+//import PublicSpeaking from "@/views/PublicSpeaking";
 
 // https://www.vuemastery.com/blog/vue-router-a-tutorial-for-vue-3/
+
+function lazyLoad(view){
+    return() => import(`@/views/${view}.vue`)
+}
 
 const routes = [
     {
@@ -18,27 +22,27 @@ const routes = [
     {
         path: "/army",
         name: "army",
-        component: ArmyPage
+        component: lazyLoad('ArmyPage')
     },
     {
         path: "/freelance",
         name: "freelance",
-        component: FreelancePage
+        component: lazyLoad('FreelancePage')
     },
     {
         path: "/foundational-melodies",
         name: "foundational-melodies",
-        component: FoundationalMelodies
+        component: lazyLoad('FoundationalMelodies')
     },
     {
         path: "/public-speaking",
         name: "public-speaking",
-        component: PublicSpeaking
+        component: lazyLoad('PublicSpeaking')
     },
     {
         path: "/blog",
         name: "blog",
-        component: BlogPage
+        component: lazyLoad('BlogPage')
     },
     {
         path: "/:catchAll(.*)",
